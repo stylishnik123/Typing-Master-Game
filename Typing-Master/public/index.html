@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordBeater</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC:500i&display=swap" rel="stylesheet">
+    
+</head>
+<body > 
+    <script src="main.js"></script>
+    <div class="box">
+        <div class="welcome-screen-box">
+            <div class="welcome-screen">
+        
+                <h1 class="primary-heading">Welcome to <span class="game-title">WordBeater Game!</span></h1>
+              <div>
+                <h3 class="tertiary-heading">A fun game to test your typing speed!</h3>
+                <div class="level-selection">
+                    <h3>Which level do want to play?</h3>
+                    <ul>
+                        <li> <button class="secondary-btn" onclick="selectLevel(1)"> <span class="level-highlight"> Level 1</span> (I just want to see..)</button></li>
+                        <li> <button class="secondary-btn" onclick="selectLevel(2)"> <span class="level-highlight"> Level 2</span> (Bring it on!)</button></li>
+                        <li> <button class="secondary-btn" onclick="selectLevel(3)"> <span class="level-highlight"> Level 3</span> (I'm a master typer!!)</button></li>
+                    </ul>
+                </div>
+               
+              </div>
+               
+            </div>
+        </div>
+       
+        <div class="main-box">
+            <h1><span  class="game-title"> Word<span class="capitalB">Beater</span></span></h1>
+            <div class="main-box-content">
+                <h2 class="seconds secondary-heading">Type The Given Word  <span style="color:#28a745" id="seconds"></span> Seconds:</h2>
+                <h2 class="display" id="current-word">Hello</h2>
+                <input type="text" class="form-control form-control-lg" placeholder="Start typing..."   height="50px"  id="word-input" onfocus="startMatch()">
+                <h4 class="result" id="message"></h4>
+                <div class="result-status">
+                    <h3 class="time tertiary-heading">Time Left:   <span id="time"> </span></h3>
+                    <h3 class="score tertiary-heading">Score:   <span id="score"> 0 </span></h3>
+                </div>
+                
+            </div>
+            <div class="instrunctions-container">
+                <h5>Instructions</h5>
+                <p class="instructions">Type each word in the given amount of seconds to score. 
+                    To play again, just type the current word. Your score will reset</p>
+            </div>
+            
+        </div>
+        <div class="scorebord-page">
+            <div class="scorebord-box">
+                <h1><span  class="game-title"> Word<span class="capitalB">B</span>eater</span></h1>
+                <div>
+                    <div class="myblock">
+                        <h3>Top 10 scorers:</h3>
+                        <button class="play-again-btn" onclick="refreshPage()">Play Again</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <th>Player Name</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </thead>
+                        <tbody>
+                            <!-- Inject data from database -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div> 
+    </div>     
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.13.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+<!--  My custom JS file -->
+
+    <!-- <script src="./secret.config.example.js"></script> -->
+    <script src="./secret.config.js"></script>
+    
+   <script src="./action.js"></script>
+    
+
+    
+</body>
+</html>
